@@ -43,17 +43,17 @@ This fork designed for production use with a focus on clarity and safety:
 - 🗃️ Added [`@napi-rs/image`](https://www.npmjs.com/package/@napi-rs/image) as a supported image processing backend in [`getImageProcessingLibrary()`](#%EF%B8%8F-image-processing), offering a balance between performance and compatibility.
 
 #### 📨 Message Handling & Compatibility
-- 👉🏻 Added support for sending [interactive messages](#-sending-interactive-messages) (buttons, lists, interactive, template, carousel).
+- 📰 Simplified sending messages with ad thumbnail using [`externalAdReply`](#3%EF%B8%8F⃣-external-ad-reply), without requiring manual `contextInfo`.
 - 📩 Expanded message support for:
    - 🖼️ [Album Message](#%EF%B8%8F-album-image--video)
    - 👤 [Group Status Message](#4%EF%B8%8F⃣-group-status)
+   - 👉🏻 [Interactive Message](#-sending-interactive-messages) (buttons, lists, native flows, templates, carousels).
    - 🎞️ [Status Mention Message](#%EF%B8%8F-status-mention)
    - 📦 [Sticker Pack Message](#-sticker-pack)
    - ✨ [Rich Response Message](#-rich-response) **[NEW]**
    - 🧾 [Message with Code Blocks](#-message-with-code-block) **[NEW]**
    - 📋 [Message with Table](#-message-with-table) **[NEW]**
    - 💳 [Payment-related Message](#-sending-payment-messages) (payment requests, invites, orders, invoices).
-- 📰 Simplified sending messages with ad thumbnail using [`externalAdReply`](#3%EF%B8%8F⃣-external-ad-reply), without requiring manual `contextInfo`.
 
 #### 🧩 Additional Message Options
 - 👁️ Added optional boolean flags for message handling:  
@@ -872,7 +872,7 @@ sock.sendMessage(jid, {
 
 #### 👁️ Other Message Options
 
-##### 1️⃣ AI icon
+##### 1️⃣ AI Icon
 
 > [!NOTE]
 It only works in private chat (`@s.whatsapp.net`).
@@ -1257,8 +1257,9 @@ This fork is based on [Baileys (GitHub)](https://github.com/WhiskeySockets/Baile
 > [!IMPORTANT]
 This fork uses Protocol Buffer definitions maintained by [WPP Connect](https://github.com/wppconnect-team) via [`wa-proto`](https://github.com/wppconnect-team/wa-proto)
 > 
-> All rights belong to the original Baileys maintainers and contributors:
-> - [WhiskeySockets/Baileys](https://github.com/WhiskeySockets/Baileys)
+> Full credit goes to the original Baileys maintainers and contributors:
 > - [purpshell](https://github.com/purpshell)
 > - [jlucaso1](https://github.com/jlucaso1)
 > - [adiwajshing](https://github.com/adiwajshing)
+>
+> This fork includes additional enhancements and modifications by [Lia Wynn](https://github.com/itsliaaa)
