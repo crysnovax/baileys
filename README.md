@@ -453,10 +453,11 @@ sock.sendMessage(jid, {
 
 ```javascript
 sock.sendMessage(jid, {
-   header: 'Example Usage',
+   headerText: '## Example Usage',
+   contentText: '---'
    code: 'console.log("Hello, World!")',
-   footer: 'Pretty simple, right?',
-   language: 'javascript'
+   language: 'javascript',
+   footerText: 'Pretty simple, right?'
 })
 ```
 
@@ -464,14 +465,15 @@ sock.sendMessage(jid, {
 
 ```javascript
 sock.sendMessage(jid, {
-   header: 'Comparison between Node.js, Bun, and Deno',
+   headerText: '## Comparison between Node.js, Bun, and Deno',
+   contentText: '---',
    title: 'Runtime Comparison',
    table: [
       ['', 'Node.js', 'Bun', 'Deno'],
       ['Engine', 'V8 (C++)', 'JavaScriptCore (C++)', 'V8 (C++)'],
       ['Performance', '4/5', '5/5', '4/5']
    ],
-   footer: 'Does this help clarify the differences?'
+   footerText: 'Does this help clarify the differences?'
 })
 ```
 
