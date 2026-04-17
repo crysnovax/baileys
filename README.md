@@ -34,16 +34,13 @@ This fork designed for production use with a focus on clarity and safety:
 - 🚫 No obfuscation. Easy to read and audit.
 - 🚫 No auto-follow channel (newsletter) behavior.
 
-### ⚙️ Changes
-
-#### 🛠️ Internal Adjustments
+### 🛠️ Internal Adjustments
 - 🖼️ Fixed an issue where media could not be sent to newsletters due to an upstream issue.
 - 📁 Reintroduced [`makeInMemoryStore`](#%EF%B8%8F-implementing-a-data-store) with a minimal ESM adaptation and small adjustments for Baileys v7.
 - 📦 Switched FFmpeg execution from `exec` to `spawn` for safer process handling.
 - 🗃️ Added [`@napi-rs/image`](https://www.npmjs.com/package/@napi-rs/image) as a supported image processing backend in [`getImageProcessingLibrary()`](#%EF%B8%8F-image-processing), offering a balance between performance and compatibility.
 
-#### 📨 Message Handling & Compatibility
-- 📰 Simplified sending messages with ad thumbnail using [`externalAdReply`](#3%EF%B8%8F⃣-external-ad-reply), without requiring manual `contextInfo`.
+### 📨 Message Handling & Compatibility
 - 📩 Expanded message support for:
    - 🖼️ [Album Message](#%EF%B8%8F-album-image--video)
    - 👤 [Group Status Message](#4%EF%B8%8F⃣-group-status)
@@ -54,8 +51,9 @@ This fork designed for production use with a focus on clarity and safety:
    - 🧾 [Message with Code Blocks](#-message-with-code-block) **[NEW]**
    - 📋 [Message with Table](#-message-with-table) **[NEW]**
    - 💳 [Payment-related Message](#-sending-payment-messages) (payment requests, invites, orders, invoices).
+- 📰 Simplified sending messages with ad thumbnail using [`externalAdReply`](#3%EF%B8%8F⃣-external-ad-reply), without requiring manual `contextInfo`.
 
-#### 🧩 Additional Message Options
+### 🧩 Additional Message Options
 - 👁️ Added optional boolean flags for message handling:  
    - 🤖 [`ai`](#1%EF%B8%8F⃣-ai-icon) - AI icon on message
    - 📣 [`mentionAll`](#-mention) - Mention all group participants without requiring their JIDs in `mentions` or `mentionedJid` **[NEW]**
@@ -340,6 +338,82 @@ sock.sendMessage(jid, {
    quoted: message
 })
 ```
+##### 🗓️ Event
+
+```javascript
+sock.sendMessage(jid, {
+   event: {
+      name: '🎶 Meet & Mingle Party',
+      description: 'Meet & Mingle Party is a fun, casual gathering to connect, chat, and build new relationships within the community.',
+      call: 'audio', // --- Or "video", this field is optional
+      startDate: new Date(Date.now() + 3600000),
+      endDate: new Date(Date.now() + 28800000),
+      isCancelled: false, // --- Optional
+      isScheduleCall: false, // --- Optional
+      extraGuestsAllowed: false, // --- Optional
+      location: {
+         name: 'Jakarta',
+         degreesLatitude: -6.2,
+         degreesLongitude: 106.8
+      }
+   }
+}, {
+   quoted: message
+})
+```
+
+##### 💭 Response
+
+```javascript
+// --- Using buttonsResponseMessage
+sock.sendMessage(jid, {
+   type: 'plain',
+   buttonReply: {
+      id: '#Menu',
+      displayText: '✨ Interesting Menu'
+   }
+}, {
+   quoted: message
+})
+
+// --- Using interactiveResponseMessage
+sock.sendMessage(jid, {
+   flowReply: {
+      format: 0,
+      text: '💭 Response',
+      name: 'menu_options',
+      paramsJson: JSON.stringify({
+         id: '#Menu',
+         description: '✨ Interesting Menu'
+      })
+   }
+}, {
+   quoted: message
+})
+
+// --- Using listResponseMessage
+sock.sendMessage(jid, {
+   listReply: {
+      title: '📄 See More',
+      description: '✨ Interesting Menu',
+      id: '#Menu'
+   }
+}, {
+   quoted: message
+})
+
+// --- Using templateButtonReplyMessage
+sock.sendMessage(jid, {
+   type: 'template',
+   buttonReply: {
+      id: '#Menu',
+      displayText: '✨ Interesting Menu',
+      index: 1
+   }
+}, {
+   quoted: message
+})
+```
 
 ##### 📊 Poll
 
@@ -400,14 +474,6 @@ sock.sendMessage(jid, {
 })
 ```
 
-##### 🎞️ Status Mention
-
-```javascript
-sock.sendMessage([jidA, jidB, jidC], {
-   text: 'Hello! 👋🏻'
-})
-```
-
 ##### ✨ Rich Response
 
 > [!NOTE]
@@ -454,7 +520,7 @@ sock.sendMessage(jid, {
 ```javascript
 sock.sendMessage(jid, {
    headerText: '## Example Usage',
-   contentText: '---'
+   contentText: '---',
    code: 'console.log("Hello, World!")',
    language: 'javascript',
    footerText: 'Pretty simple, right?'
@@ -474,6 +540,14 @@ sock.sendMessage(jid, {
       ['Performance', '4/5', '5/5', '4/5']
    ],
    footerText: 'Does this help clarify the differences?'
+})
+```
+
+##### 🎞️ Status Mention
+
+```javascript
+sock.sendMessage([jidA, jidB, jidC], {
+   text: 'Hello! 👋🏻'
 })
 ```
 
@@ -618,7 +692,7 @@ sock.sendMessage(jid, {
    image: {
       url: './path/to/image.jpg'
    },
-   caption: '👆🏻 Buttons and Native Flow!',
+   caption: '👆?? Buttons and Native Flow!',
    footer: '@itsliaaa/baileys',
    buttons: [{
       text: '👋🏻 Rating',
