@@ -34,6 +34,26 @@ This fork designed for production use with a focus on clarity and safety:
 - 🚫 No obfuscation. Easy to read and audit.
 - 🚫 No auto-follow channel (newsletter) behavior.
 
+> [!IMPORTANT]
+Hi everyone,
+>
+> I want to share something that’s been weighing on me a bit.
+>
+> Recently, I found a few packages published on npm that are essentially just **renamed** versions of a fork I personally worked on:
+>
+> - https://www.npmjs.com/package/@noya4u_27/baileys
+> - https://www.npmjs.com/package/@phrolovaa/baileys
+> - https://www.npmjs.com/package/@dnuzi/baileys
+> - https://www.npmjs.com/package/@crysnovax/baileys
+>
+> To be clear, I’m **not** the original maintainer of Baileys all respect goes to the amazing work behind [@whiskeysockets/baileys](https://github.com/WhiskeySockets/Baileys). I only created and maintained my own fork ([@itsliaaa/baileys](https://www.npmjs.com/package/@itsliaaa/baileys)) where I spent a **lot** of time improving and adapting things on my own.
+>
+> **It’s honestly a bit disheartening to see my fork being republished under different names without any acknowledgment or credit.** I put a lot of late nights and personal effort into it, so seeing it circulate like this feels… quietly painful.
+>
+> If you come across these packages, I’d really appreciate it if you could take a closer look and, if appropriate, **help report them to npm.** More than anything, I just hope for a bit of fairness and proper recognition for the work that people put in.
+>
+> Thank you for taking the time to read this 🤍
+
 ### 🛠️ Internal Adjustments
 - 🖼️ Fixed an issue where media could not be sent to newsletters due to an upstream issue.
 - 📁 Reintroduced [`makeInMemoryStore`](#%EF%B8%8F-implementing-a-data-store) with a minimal ESM adaptation and small adjustments for Baileys v7.
@@ -53,7 +73,7 @@ This fork designed for production use with a focus on clarity and safety:
    - 💳 [Payment-related Message](#-sending-payment-messages) (payment requests, invites, orders, invoices).
 - 📰 Simplified sending messages with ad thumbnail using [`externalAdReply`](#3%EF%B8%8F⃣-external-ad-reply), without requiring manual `contextInfo`.
 - 💭 Added support for quoting messages inside channel (newsletter). **[NEW]**
-- 🎀 Added support for [custom button icon](#-sending-interactive-messages). **[NEW]**
+- 🎀 Added support for [custom button icon](#3%EF%B8%8F⃣-interactive). **[NEW]**
 
 ### 🧩 Additional Message Options
 - 👁️ Added optional boolean flags for message handling:  
