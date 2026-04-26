@@ -68,7 +68,11 @@ This fork designed for production use with a focus on clarity and safety:
    - 🔒 [`secureMetaServiceLabel`](#6%EF%B8%8F⃣-secure-meta-service-label) - Secure meta service label on message **[NEW]**
    - 📄 [`raw`](#5%EF%B8%8F⃣-raw) - Build your message manually **(DO NOT USE FOR EXPLOITATION)**
 
-### 📋 Index
+### 📋 Table of Contents
+- [✨ Highlights](#-highlights)
+- [🛠️ Internal Adjustments](#%EF%B8%8F-internal-adjustments)
+- [📨 Messages Handling & Compatibility](#-highlights)
+- [🧩 Additional Message Options](#-additional-message-options)
 - [📥 Installation](#-installation)
    - [🧩 Import (ESM & CJS)](#-import-esm--cjs)
 - [🌐 Connect to WhatsApp (Quick Step)](#-connect-to-whatsapp-quick-step)
@@ -133,7 +137,7 @@ This fork designed for production use with a focus on clarity and safety:
    - [👤 Profile Management](#-profile-management)
    - [🔐 Privacy Management](#-privacy-management)
    - [📡 Events](#-events)
-- [🚀 Try It](#-try-it)
+- [🚀 Try the Bot](#-try-the-bot)
 - [📦 Fork Base](#-fork-base)
 - [📣 Credits](#-credits)
 
@@ -1725,18 +1729,18 @@ sock.ev.on('newsletter-settings.update', (update) => {})
 sock.ev.on('settings.update', (update) => {})
 ```
 
-## 🚀 Try the Bot
+### 🚀 Try the Bot
 
 A fast, lightweight, and modular WhatsApp bot built with [@itsliaaa/baileys](https://www.npmjs.com/package/@itsliaaa/baileys).
 Perfect for managing groups, moderating chats, and adding fun with quiz games and handy tools.
 
 👉🏻 [@itsliaaa/starseed](https://github.com/itsliaaa/starseed#readme)
 
-## 📦 Fork Base
+### 📦 Fork Base
 
 This fork is based on [Baileys (GitHub)](https://github.com/WhiskeySockets/Baileys)
 
-## 📣 Credits
+### 📣 Credits
 
 This project utilizes Protocol Buffer definitions maintained by [WPPConnect](https://github.com/wppconnect-team) through the [`wa-proto`](https://github.com/wppconnect-team/wa-proto) repository.
 
