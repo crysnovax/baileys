@@ -40,7 +40,10 @@ export function prepareRichResponseMessage(content: any): {
                     signature: Uint8Array<ArrayBuffer>;
                 }[];
             };
-            botRenderingConfigMetadata: typeof BOT_RENDERING_CONFIG_METADATA;
+            botRenderingConfigMetadata: {
+                bloksVersioningId: string;
+                pixelDensity: number;
+            };
         };
     };
     botForwardedMessage: {
@@ -63,7 +66,10 @@ export function wrapToBotForwardedMessage(richResponseMessage: any): {
                     signature: Uint8Array<ArrayBuffer>;
                 }[];
             };
-            botRenderingConfigMetadata: typeof BOT_RENDERING_CONFIG_METADATA;
+            botRenderingConfigMetadata: {
+                bloksVersioningId: string;
+                pixelDensity: number;
+            };
         };
     };
     botForwardedMessage: {
@@ -72,5 +78,4 @@ export function wrapToBotForwardedMessage(richResponseMessage: any): {
         };
     };
 };
-import { BOT_RENDERING_CONFIG_METADATA } from '../Defaults/index.js';
 //# sourceMappingURL=rich-message-utils.d.ts.map

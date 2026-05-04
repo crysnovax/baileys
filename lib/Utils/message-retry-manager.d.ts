@@ -69,7 +69,6 @@ export class MessageRetryManager {
      * Cancel pending phone request
      */
     cancelPendingPhoneRequest(messageId: any): void;
-    clear(): void;
     keyToString(key: any): string;
     removeRecentMessage(messageId: any): void;
 }

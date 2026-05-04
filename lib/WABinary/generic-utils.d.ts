@@ -14,13 +14,12 @@ export function getBinaryNodeMessages({ content }: {
 }): {
     [k: string]: any;
 }[];
-export function getBizBinaryNode(message: any, addBizAttributes: any): {
+export function getBizBinaryNode(message: any): {
     tag: string;
     attrs: {
         actual_actors: string;
         host_storage: string;
         privacy_mode_ts: string;
-        native_flow_name: any;
     };
     content: ({
         tag: string;
@@ -54,7 +53,6 @@ export function getBizBinaryNode(message: any, addBizAttributes: any): {
         actual_actors: string;
         host_storage: string;
         privacy_mode_ts: string;
-        native_flow_name: any;
     };
     content: ({
         tag: string;

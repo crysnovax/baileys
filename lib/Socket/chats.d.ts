@@ -1,4 +1,8 @@
 export function makeChatsSocket(config: any): {
+    findUserId: (pnLid: any) => Promise<{
+        phoneNumber: any;
+        lid: any;
+    }>;
     serverProps: {
         /** AB prop 10518: gate tctoken on 1:1 messages. Default true (safe: avoids 463). */
         privacyTokenOn1to1: boolean;
@@ -33,7 +37,6 @@ export function makeChatsSocket(config: any): {
     fetchBlocklist: () => Promise<any>;
     fetchStatus: (...jids: any[]) => Promise<any>;
     fetchDisappearingDuration: (...jids: any[]) => Promise<any>;
-    findUserId: (pnLid: any) => Promise<any>;
     updateProfilePicture: (jid: any, content: any, dimensions: any) => Promise<void>;
     removeProfilePicture: (jid: any) => Promise<void>;
     updateProfileStatus: (status: any) => Promise<void>;
@@ -86,7 +89,6 @@ export function makeChatsSocket(config: any): {
         on: (...args: any[]) => any;
         off: (...args: any[]) => any;
         removeAllListeners: (...args: any[]) => any;
-        destroy(): void;
     };
     authState: {
         creds: any;
@@ -107,7 +109,6 @@ export function makeChatsSocket(config: any): {
     sendNode: (frame: any) => Promise<void>;
     logout: (msg: any) => Promise<void>;
     end: (error: any) => Promise<void>;
-    registerSocketEndHandler: (handler: any) => void;
     onUnexpectedError: (err: any, msg: any) => void;
     uploadPreKeys: (count?: number, retryCount?: number) => Promise<void>;
     uploadPreKeysToServerIfRequired: () => Promise<void>;

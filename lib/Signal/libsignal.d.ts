@@ -36,7 +36,6 @@ export function makeLibSignalRepository(auth: any, logger: any, pnToLIDFunc: any
         reason?: undefined;
     }>;
     deleteSession(jids: any): Promise<any>;
-    close(): void;
     migrateSession(fromJid: any, toJid: any): Promise<any>;
 };
 import { LIDMappingStore } from './lid-mapping.js';

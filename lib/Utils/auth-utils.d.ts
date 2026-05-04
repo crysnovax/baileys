@@ -18,6 +18,7 @@ export function addTransactionCapability(state: any, logger: any, { maxCommitRet
     isInTransaction: () => boolean;
     transaction: (work: any, key: any) => Promise<any>;
 };
+export function assertMeId(creds: any): any;
 export function initAuthCreds(): {
     noiseKey: {
         private: any;

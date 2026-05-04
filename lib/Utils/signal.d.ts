@@ -58,7 +58,7 @@ export function getNextPreKeysNode(state: any, count: any): Promise<{
         attrs: {
             xmlns: string;
             type: string;
-            to: "@s.whatsapp.net";
+            to: string;
         };
         content: {
             tag: string;

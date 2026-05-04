@@ -2,12 +2,6 @@ export function makeMessagesRecvSocket(config: any): {
     sendMessageAck: (node: any, errorCode: any) => Promise<void>;
     sendRetryRequest: (node: any, forceIncludeKeys?: boolean) => Promise<void>;
     rejectCall: (callId: any, callFrom: any) => Promise<void>;
-    initiateCall: (jid: any, options?: {}) => Promise<{
-        callId: any;
-        to: any;
-        isVideo: boolean;
-    }>;
-    cancelCall: (callId: any, callTo: any) => Promise<void>;
     fetchMessageHistory: (count: any, oldestMsgKey: any, oldestMsgTimestamp: any) => Promise<any>;
     requestPlaceholderResend: (messageKey: any, msgData: any) => Promise<any>;
     messageRetryManager: import("../Utils/message-retry-manager.js").MessageRetryManager | null;
@@ -51,7 +45,6 @@ export function makeMessagesRecvSocket(config: any): {
     updateMemberLabel: (jid: any, memberLabel: any) => Promise<any>;
     updateMediaMessage: (message: any) => Promise<any>;
     sendMessage: (jid: any, content: any, options?: {}) => Promise<proto.WebMessageInfo | undefined>;
-    executeWMexQuery: (variables: any, queryId: any, dataPath: any) => Promise<any>;
     newsletterCreate: (name: any, description: any) => Promise<{
         id: any;
         owner: undefined;
@@ -80,9 +73,7 @@ export function makeMessagesRecvSocket(config: any): {
     newsletterUpdatePicture: (jid: any, content: any) => Promise<any>;
     newsletterRemovePicture: (jid: any) => Promise<any>;
     newsletterReactMessage: (jid: any, serverId: any, reaction: any) => Promise<void>;
-    newsletterFetchMessages: (type: any, key: any, count: any, after: any, before: any) => Promise<{
-        [k: string]: any;
-    }[]>;
+    newsletterFetchMessages: (jid: any, count: any, since: any, after: any) => Promise<any>;
     subscribeNewsletterUpdates: (jid: any) => Promise<{
         duration: any;
     } | null>;
@@ -90,37 +81,6 @@ export function makeMessagesRecvSocket(config: any): {
     newsletterChangeOwner: (jid: any, newOwnerJid: any) => Promise<void>;
     newsletterDemote: (jid: any, userJid: any) => Promise<void>;
     newsletterDelete: (jid: any) => Promise<void>;
-    extractGroupMetadata: (result: any) => {
-        id: any;
-        notify: any;
-        addressingMode: any;
-        subject: any;
-        subjectOwner: any;
-        subjectOwnerPn: any;
-        subjectOwnerUsername: any;
-        subjectTime: number;
-        size: any;
-        creation: number;
-        owner: string | undefined;
-        ownerPn: string | undefined;
-        ownerUsername: any;
-        owner_country_code: any;
-        desc: any;
-        descId: any;
-        descOwner: string | undefined;
-        descOwnerPn: string | undefined;
-        descOwnerUsername: any;
-        descTime: number | undefined;
-        linkedParent: any;
-        restrict: boolean;
-        announce: boolean;
-        isCommunity: boolean;
-        isCommunityAnnounce: boolean;
-        joinApprovalMode: boolean;
-        memberAddMode: boolean;
-        participants: any;
-        ephemeralDuration: number | undefined;
-    };
     groupMetadata: (jid: any) => Promise<{
         id: any;
         notify: any;
@@ -229,8 +189,11 @@ export function makeMessagesRecvSocket(config: any): {
     groupSettingUpdate: (jid: any, setting: any) => Promise<void>;
     groupMemberAddMode: (jid: any, mode: any) => Promise<void>;
     groupJoinApprovalMode: (jid: any, mode: any) => Promise<void>;
-    groupFetchAllParticipating: () => Promise<any>;
-    groupQuery: (jid: any, type: any, content: any) => Promise<any>;
+    groupFetchAllParticipating: () => Promise<{}>;
+    findUserId: (pnLid: any) => Promise<{
+        phoneNumber: any;
+        lid: any;
+    }>;
     serverProps: {
         privacyTokenOn1to1: boolean;
         profilePicPrivacyToken: boolean;
@@ -261,7 +224,6 @@ export function makeMessagesRecvSocket(config: any): {
     fetchBlocklist: () => Promise<any>;
     fetchStatus: (...jids: any[]) => Promise<any>;
     fetchDisappearingDuration: (...jids: any[]) => Promise<any>;
-    findUserId: (pnLid: any) => Promise<any>;
     updateProfilePicture: (jid: any, content: any, dimensions: any) => Promise<void>;
     removeProfilePicture: (jid: any) => Promise<void>;
     updateProfileStatus: (status: any) => Promise<void>;
@@ -314,7 +276,6 @@ export function makeMessagesRecvSocket(config: any): {
         on: (...args: any[]) => any;
         off: (...args: any[]) => any;
         removeAllListeners: (...args: any[]) => any;
-        destroy(): void;
     };
     authState: {
         creds: any;
@@ -335,7 +296,6 @@ export function makeMessagesRecvSocket(config: any): {
     sendNode: (frame: any) => Promise<void>;
     logout: (msg: any) => Promise<void>;
     end: (error: any) => Promise<void>;
-    registerSocketEndHandler: (handler: any) => void;
     onUnexpectedError: (err: any, msg: any) => void;
     uploadPreKeys: (count?: number, retryCount?: number) => Promise<void>;
     uploadPreKeysToServerIfRequired: () => Promise<void>;

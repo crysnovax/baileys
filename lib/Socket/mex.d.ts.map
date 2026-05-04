@@ -1,1 +1,1 @@
-{"version":3,"file":"mex.d.ts","sourceRoot":"","sources":["../../lib/Socket/mex.js"],"names":[],"mappings":"AAoBO,iIAoBN"}
+{"version":3,"file":"mex.d.ts","sourceRoot":"","sources":["../../src/Socket/mex.js"],"names":[],"mappings":"AAoBO,iIAoBN"}

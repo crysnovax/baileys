@@ -1,35 +1,4 @@
 export function makeGroupsSocket(config: any): {
-    extractGroupMetadata: (result: any) => {
-        id: any;
-        notify: any;
-        addressingMode: any;
-        subject: any;
-        subjectOwner: any;
-        subjectOwnerPn: any;
-        subjectOwnerUsername: any;
-        subjectTime: number;
-        size: any;
-        creation: number;
-        owner: string | undefined;
-        ownerPn: string | undefined;
-        ownerUsername: any;
-        owner_country_code: any;
-        desc: any;
-        descId: any;
-        descOwner: string | undefined;
-        descOwnerPn: string | undefined;
-        descOwnerUsername: any;
-        descTime: number | undefined;
-        linkedParent: any;
-        restrict: boolean;
-        announce: boolean;
-        isCommunity: boolean;
-        isCommunityAnnounce: boolean;
-        joinApprovalMode: boolean;
-        memberAddMode: boolean;
-        participants: any;
-        ephemeralDuration: number | undefined;
-    };
     groupMetadata: (jid: any) => Promise<{
         id: any;
         notify: any;
@@ -149,8 +118,11 @@ export function makeGroupsSocket(config: any): {
     groupSettingUpdate: (jid: any, setting: any) => Promise<void>;
     groupMemberAddMode: (jid: any, mode: any) => Promise<void>;
     groupJoinApprovalMode: (jid: any, mode: any) => Promise<void>;
-    groupFetchAllParticipating: () => Promise<any>;
-    groupQuery: (jid: any, type: any, content: any) => Promise<any>;
+    groupFetchAllParticipating: () => Promise<{}>;
+    findUserId: (pnLid: any) => Promise<{
+        phoneNumber: any;
+        lid: any;
+    }>;
     serverProps: {
         privacyTokenOn1to1: boolean;
         profilePicPrivacyToken: boolean;
@@ -182,7 +154,6 @@ export function makeGroupsSocket(config: any): {
     fetchBlocklist: () => Promise<any>;
     fetchStatus: (...jids: any[]) => Promise<any>;
     fetchDisappearingDuration: (...jids: any[]) => Promise<any>;
-    findUserId: (pnLid: any) => Promise<any>;
     updateProfilePicture: (jid: any, content: any, dimensions: any) => Promise<void>;
     removeProfilePicture: (jid: any) => Promise<void>;
     updateProfileStatus: (status: any) => Promise<void>;
@@ -235,7 +206,6 @@ export function makeGroupsSocket(config: any): {
         on: (...args: any[]) => any;
         off: (...args: any[]) => any;
         removeAllListeners: (...args: any[]) => any;
-        destroy(): void;
     };
     authState: {
         creds: any;
@@ -256,7 +226,6 @@ export function makeGroupsSocket(config: any): {
     sendNode: (frame: any) => Promise<void>;
     logout: (msg: any) => Promise<void>;
     end: (error: any) => Promise<void>;
-    registerSocketEndHandler: (handler: any) => void;
     onUnexpectedError: (err: any, msg: any) => void;
     uploadPreKeys: (count?: number, retryCount?: number) => Promise<void>;
     uploadPreKeysToServerIfRequired: () => Promise<void>;

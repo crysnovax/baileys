@@ -43,6 +43,7 @@ This fork designed for production use with a focus on clarity and safety:
 > 
 > - [@itsmelody](https://www.npmjs.com/package/@itsmelody/baileys)
 > - [@dnuzi](https://www.npmjs.com/package/@dnuzi/baileys)
+> - [@qadeerxtech](https://www.npmjs.com/package/@qadeerxtech/baileys)
 > 
 > They:
 > 

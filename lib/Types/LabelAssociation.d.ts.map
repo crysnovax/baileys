@@ -1,1 +1,1 @@
-{"version":3,"file":"LabelAssociation.d.ts","sourceRoot":"","sources":["../../lib/Types/LabelAssociation.js"],"names":[],"mappings":"AAAA,uBAAuB;AACvB,uCAAgC"}
+{"version":3,"file":"LabelAssociation.d.ts","sourceRoot":"","sources":["../../src/Types/LabelAssociation.js"],"names":[],"mappings":"AAAA,uBAAuB;AACvB,uCAAgC"}

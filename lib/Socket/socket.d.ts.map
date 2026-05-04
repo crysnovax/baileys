@@ -1,1 +1,1 @@
-{"version":3,"file":"socket.d.ts","sourceRoot":"","sources":["../../lib/Socket/socket.js"],"names":[],"mappings":"AAkBO;;;;;;;;;4CAbwD,GAAG;aAAuC,GAAG;cAA+B,GAAG;6BAA8C,GAAG;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAg6BvL,sDAAsD;;;;;EAM7D;gCAh6B+B,mBAAmB;2BAFxB,sBAAsB"}
+{"version":3,"file":"socket.d.ts","sourceRoot":"","sources":["../../src/Socket/socket.js"],"names":[],"mappings":"AAkBO;;;;;;;;;4CAmFC,cAAG;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAizBH,sDAAsD;;;;;EAM7D;gCAj5B+B,mBAAmB;2BAFxB,sBAAsB"}

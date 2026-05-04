@@ -1,1 +1,1 @@
-{"version":3,"file":"validate-connection.d.ts","sourceRoot":"","sources":["../../lib/Utils/validate-connection.js"],"names":[],"mappings":"AAoDO,kFAYN;AASM;;;;qCAkDN;AACM;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;EAwEN;AACM,wFAQN;sBA3MqB,wBAAwB"}
+{"version":3,"file":"validate-connection.d.ts","sourceRoot":"","sources":["../../src/Utils/validate-connection.js"],"names":[],"mappings":"AAgDO,kFAYN;AAMM;;;;qCAkDN;AACM;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;EAwEN;AACM,wFAQN;sBApMqB,wBAAwB"}

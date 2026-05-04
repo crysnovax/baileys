@@ -17,6 +17,10 @@ export function newLTHashState(): {
     hash: any;
     indexValueMap: {};
 };
+export function ensureLTHashStateVersion(state: any): any;
+export const MAX_SYNC_ATTEMPTS: 2;
+export function isMissingKeyError(error: any): boolean;
+export function isAppStateSyncIrrecoverable(error: any, attempts: any): boolean;
 export function encodeSyncdPatch({ type, index, syncAction, apiVersion, operation }: {
     type: any;
     index: any;
@@ -51,10 +55,6 @@ export function decodeSyncdMutations(msgMutations: any, initialState: any, getAp
     hash: any;
     indexValueMap: any;
 }>;
-export function ensureLTHashStateVersion(state: any): any;
-export const MAX_SYNC_ATTEMPTS: 2;
-export function isMissingKeyError(error: any): boolean;
-export function isAppStateSyncIrrecoverable(error: any, attempts: any): boolean;
 export function decodeSyncdPatch(msg: any, name: any, initialState: any, getAppStateSyncKey: any, onMutation: any, validateMacs: any): Promise<{
     hash: any;
     indexValueMap: any;

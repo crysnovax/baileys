@@ -22,7 +22,7 @@ export function configureSuccessfulPairing(stanza: any, { advSecretKey, signedId
     reply: {
         tag: string;
         attrs: {
-            to: "@s.whatsapp.net";
+            to: string;
             type: string;
             id: any;
         };
