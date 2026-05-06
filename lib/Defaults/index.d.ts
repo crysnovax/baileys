@@ -30,6 +30,12 @@ export namespace WA_CERT_DETAILS {
     let PUBLIC_KEY: any;
 }
 export const PROCESSABLE_HISTORY_TYPES: proto.HistorySync.HistorySyncType[];
+export namespace DEFAULT_CACHE_TTLS {
+    let SIGNAL_STORE: number;
+    let MSG_RETRY: number;
+    let CALL_OFFER: number;
+    let USER_DEVICES: number;
+}
 export namespace DEFAULT_CONNECTION_CONFIG {
     export { version };
     export let browser: any[];
@@ -120,12 +126,6 @@ export const HISTORY_SYNC_PAUSED_TIMEOUT_MS: 120000;
 export const MIN_PREKEY_COUNT: 5;
 export const INITIAL_PREKEY_COUNT: 812;
 export const UPLOAD_TIMEOUT: 30000;
-export namespace DEFAULT_CACHE_TTLS {
-    let SIGNAL_STORE: number;
-    let MSG_RETRY: number;
-    let CALL_OFFER: number;
-    let USER_DEVICES: number;
-}
 export namespace TimeMs {
     let Minute: number;
     let Hour: number;

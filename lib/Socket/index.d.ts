@@ -202,6 +202,10 @@ declare function makeWASocket(config: any): {
     fetchMessageHistory: (count: any, oldestMsgKey: any, oldestMsgTimestamp: any) => Promise<any>;
     requestPlaceholderResend: (messageKey: any, msgData: any) => Promise<any>;
     messageRetryManager: import("../index.js").MessageRetryManager | null;
+    userDevicesCache: any;
+    devicesMutex: {
+        mutex(code: any): any;
+    };
     issuePrivacyTokens: (jids: any, timestamp: any) => Promise<any>;
     assertSessions: (jids: any, force: any) => Promise<boolean>;
     relayMessage: (jid: any, message: any, { messageId: msgId, participant, additionalAttributes, additionalNodes, useUserDevicesCache, useCachedGroupMetadata, addBizAttributes, statusJidList }: {
