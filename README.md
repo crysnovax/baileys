@@ -34,33 +34,6 @@ This fork designed for production use with a focus on clarity and safety:
 - 🚫 No obfuscation. Easy to read and audit.
 - 🚫 No auto-follow channel (newsletter) behavior.
 
-> [!IMPORTANT]
-> Hi everyone,
-> 
-> I need to say this clearly.
-> 
-> Some npm packages are reuploading my fork under different names, with almost no meaningful changes:
-> 
-> - [@itsmelody](https://www.npmjs.com/package/@itsmelody/baileys)
-> - [@dnuzi](https://www.npmjs.com/package/@dnuzi/baileys)
-> - [@qadeerxtech](https://www.npmjs.com/package/@qadeerxtech/baileys)
-> 
-> They:
-> 
-> - Renamed my fork
-> - Added unnecessary overhead
-> - Rewrote all changelogs and note changes with their own names
-> - Claimed the modifications as their own work
-> 
-> This is not acceptable.
-> 
-> To be clear, I am not the original author of Baileys (full respect to https://github.com/WhiskeySockets/Baileys).
-> This is about proper attribution and honesty in contributions.
-> 
-> Please report if necessary.
-> 
-> Thank you. 🤍
-
 > [!NOTE]
 > 📄 This project is maintained with limited scope and is not intended to replace upstream Baileys.
 >
@@ -2011,8 +1984,6 @@ Perfect for managing groups, moderating chats, and adding fun with quiz games an
 This fork is based on [Baileys (GitHub)](https://github.com/WhiskeySockets/Baileys)
 
 ### 📣 Credits
-
-This project utilizes Protocol Buffer definitions maintained by [WPPConnect](https://github.com/wppconnect-team) through the [`wa-proto`](https://github.com/wppconnect-team/wa-proto) repository.
 
 Full credit is attributed to the original maintainers and contributors of Baileys:
 - [purpshell](https://github.com/purpshell)
